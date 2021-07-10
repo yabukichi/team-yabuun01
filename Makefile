@@ -4,16 +4,6 @@ install:
 	docker-compose exec php composer install
 	docker-compose exec php php artisan migrate
 	docker-compose exec php php artisan key:generate
-	docker-compose exec php php artisan db:seed --class=SchoolSeeder
-	docker-compose exec php php artisan db:seed --class=ClassSeeder
-	docker-compose exec php php artisan db:seed --class=MessageSeeder
-	docker-compose exec php php artisan db:seed --class=UserSeeder
-	docker-compose exec php php artisan db:seed --class=ClassUserSchoolSeeder
-	docker-compose exec php php artisan db:seed --class=WcEventSeeder
-	docker-compose exec php php artisan db:seed --class=ProjectsSeeder
-	docker-compose exec php php artisan db:seed --class=WcMatchingSeeder
-	docker-compose exec php php artisan db:seed --class=PostSeeder
-	docker-compose exec php php artisan db:seed --class=ResultSeeder
 
 build:
 	docker-compose build
@@ -41,16 +31,6 @@ migrate:
 	docker-compose exec php php artisan migrate
 
 seed:
-	docker-compose exec php php artisan db:seed --class=SchoolSeeder
-	docker-compose exec php php artisan db:seed --class=ClassSeeder
-	docker-compose exec php php artisan db:seed --class=MessageSeeder
-	docker-compose exec php php artisan db:seed --class=UserSeeder
-	docker-compose exec php php artisan db:seed --class=ClassUserSchoolSeeder
-	docker-compose exec php php artisan db:seed --class=WcEventSeeder
-	docker-compose exec php php artisan db:seed --class=ProjectsSeeder
-	docker-compose exec php php artisan db:seed --class=WcMatchingSeeder
-	docker-compose exec php php artisan db:seed --class=PostSeeder
-	docker-compose exec php php artisan db:seed --class=ResultSeeder
 
 re-seed:
 	docker-compose exec php php artisan migrate:refresh
