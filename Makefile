@@ -30,30 +30,11 @@ restart:
 migrate:
 	docker-compose exec php php artisan migrate
 
-seed:
-
-re-seed:
-	docker-compose exec php php artisan migrate:refresh
-	docker-compose exec php php artisan db:seed --class=realDummySeeder
-
 refresh:
 	docker-compose exec php php artisan migrate:refresh
 
 reset:
 	docker-compose exec php php artisan migrate:reset
-
-real-seed:
-	docker-compose exec php php artisan migrate:refresh
-	docker-compose exec php php artisan db:seed --class=SchoolSeeder
-	docker-compose exec php php artisan db:seed --class=ClassSeeder
-	docker-compose exec php php artisan db:seed --class=MessageSeeder
-	docker-compose exec php php artisan db:seed --class=UserSeeder
-	docker-compose exec php php artisan db:seed --class=ClassUserSchoolSeeder
-	docker-compose exec php php artisan db:seed --class=WcEventSeeder
-	docker-compose exec php php artisan db:seed --class=ProjectsSeeder
-	docker-compose exec php php artisan db:seed --class=WcMatchingSeeder
-	docker-compose exec php php artisan db:seed --class=PostSeeder
-	docker-compose exec php php artisan db:seed --class=ResultSeeder
 
 rollback:
 	docker-compose exec php php artisan migrate:rollback
