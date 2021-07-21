@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\VocabularyController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,3 +24,14 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 
 // TopPage
 Route::get('/top', [App\Http\Controllers\TopController::class, 'index'])->name('index');
+
+
+//Vocabularysーーーーーーーーーーーーーーーーーーーーーーーー
+// 一覧
+Route::get('/Vocabularys/index' ,[App\Http\Controllers\VocabularyController::class,'index'])->name('Vocabularys.index');
+
+// 追加画面
+Route::get('/Vocabularys/create', [App\Http\Controllers\VocabularyController::class,'create'])->name('Vocabularys.create');
+
+// 追加処理
+Route::post('/Vocabularys/create',[App\Http\Controllers\VocabularyController::class,'add'])->name('Vocabularys.add');
