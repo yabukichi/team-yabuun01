@@ -35,3 +35,6 @@ Route::get('/Vocabularys/create', [App\Http\Controllers\VocabularyController::cl
 
 // 追加処理
 Route::post('/Vocabularys/create',[App\Http\Controllers\VocabularyController::class,'add'])->name('Vocabularys.add');
+
+// 単語一覧
+Route::get('/Vocabularys/show', [App\Http\Controllers\VocabularyController::class,'show'])->name('Vocabularys.show');

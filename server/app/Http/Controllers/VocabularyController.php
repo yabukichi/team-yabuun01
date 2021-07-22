@@ -17,4 +17,10 @@ class VocabularyController extends Controller
     public function add(Request $request){
         return redirect('vocabularys/index');
     }
+
+    public function show(Request $request){
+
+        // DBから単語帳の中身を取り出してviewに送る
+        return view('Vocabularys.show');
+    }
 }
