@@ -28,7 +28,7 @@ restart:
 	docker-compose up -d
 
 migrate:
-	docker-compose exec phpteam-01-php php artisan migrate
+	docker-compose exec php php artisan migrate
 
 refresh:
 	docker-compose exec php php artisan migrate:refresh
