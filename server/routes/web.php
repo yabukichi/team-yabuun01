@@ -20,3 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// practice
+Route::get('/practices/index', [App\Http\Controllers\PracticeController::class, 'index'])->name('practices.index');
+Route::get('/practices/show', [App\Http\Controllers\PracticeController::class, 'show'])->name('practices.show');
+Route::get('/practices/result', [App\Http\Controllers\PracticeController::class, 'result'])->name('practices.result');
