@@ -38,3 +38,8 @@ Route::post('/Vocabularys/create',[App\Http\Controllers\VocabularyController::cl
 
 // 単語一覧
 Route::get('/Vocabularys/show', [App\Http\Controllers\VocabularyController::class,'show'])->name('Vocabularys.show');
+
+// practice
+Route::get('/practices/index', [App\Http\Controllers\PracticeController::class, 'index'])->name('practices.index');
+Route::get('/practices/show', [App\Http\Controllers\PracticeController::class, 'show'])->name('practices.show');
+Route::get('/practices/result', [App\Http\Controllers\PracticeController::class, 'result'])->name('practices.result');
