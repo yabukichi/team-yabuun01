@@ -3,16 +3,16 @@
 <p>
   単語一覧
 </p>
-<ul>
-	{{-- @foreach ($collection as $item)		 --}}
+<ol>
+	@foreach ($items as $item)		
 	<li>
 		<div>
-			<p>問題</p>
+			<p>{{$item->question}}</p>
       {{-- クリックすると回答が見られるようにする。 --}}
-			<p>回答</p>
+			<p>{{$item->answer}}</p>
 		</div>
 	</li>
-	{{-- @endforeach --}}
-</ul>
+	@endforeach
+</ol>
 <a href="{{route('Vocabularys.index')}}">戻る</a>
 {{-- @endsection --}}
