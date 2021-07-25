@@ -29,6 +29,6 @@ class CreateWordsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('word');
+        Schema::dropIfExists('words');
     }
 }
