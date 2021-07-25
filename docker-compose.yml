@@ -1,15 +1,15 @@
-version: '3'
+version: "3"
 
 services:
   php:
-    container_name: php
+    container_name: phpteam-01-php
     build: ./docker/php
     volumes:
       - ./server:/var/www
 
   nginx:
     image: nginx
-    container_name: nginx
+    container_name: phpteam-01-nginx
     ports:
       - 8000:80
     volumes:
@@ -20,12 +20,12 @@ services:
 
   db:
     image: postgres:13.1-alpine
-    container_name: db
+    container_name: phpteam-01-db
     environment:
-      TZ: 'Asia/Tokyo'
-      POSTGRES_USER: 'docker'
-      POSTGRES_PASSWORD: 'docker'
-      POSTGRES_DB: 'laravel_development'
+      TZ: "Asia/Tokyo"
+      POSTGRES_USER: "docker"
+      POSTGRES_PASSWORD: "docker"
+      POSTGRES_DB: "laravel_development"
       POSTGRES_HOST_AUTH_METHOD: "trust"
     volumes:
       - ./docker/db/data:/var/lib/postgresql/data
