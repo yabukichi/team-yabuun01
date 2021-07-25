@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AE6BA,UAAU,CAAV,MAAU,CACN,EAAE,CACE,SAAS,CAAE,SAAS,CAGxB,IAAI,CACA,SAAS,CAAE,cAAc",
+    "sources": [
+        "style.scss",
+        "_variables.scss",
+        "_mixin.scss",
+        "_main.scss",
+        "_sidebar.scss"
+    ],
+    "names": [],
+    "file": "style.min.css"
+}
