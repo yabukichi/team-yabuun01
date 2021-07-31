@@ -1,0 +1,38 @@
+// スマートフォン（576px以下）
+@mixin sm {
+    @media (min-width: 576px) {
+        @content;
+    }
+}
+
+// タブレット（768px以下）
+@mixin md {
+    @media (min-width: 768px) {
+        @content;
+    }
+}
+
+// 大デバイス（992px以下）
+@mixin lg {
+    @media (min-width: 992px) {
+        @content;
+    }
+}
+
+// デスクトップとタブレットの間（1200px以下）
+@mixin xl {
+    @media (min-width: 1200px) {
+        @content;
+    }
+}
+
+// ローダーの動き
+@keyframes loader {
+    0% {
+        transform: rotate(0);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
