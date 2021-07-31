@@ -1,5 +1,6 @@
 {{-- @section('content') --}}
-<form action="" method="POST">
+<form action="{{route('Vocabularys.add')}}" method="POST">
+	@csrf
 	<div>
 		<h3>タイトル</h3>
 		<input type="text" name='title'>
