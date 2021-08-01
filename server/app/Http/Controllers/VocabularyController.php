@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Word;
 
 class VocabularyController extends Controller
 {
@@ -20,7 +21,8 @@ class VocabularyController extends Controller
 
     public function show(Request $request){
 
-        // DBから単語帳の中身を取り出してviewに送る
-        return view('Vocabularys.show');
+        $noteId = 1;
+        $items = Word::where('note_id',$noteId)->get();
+        return view('Vocabularys.show',compact('items'));
     }
 }
