@@ -27,6 +27,19 @@ restart:
 	docker-compose down
 	docker-compose up -d
 
+seed:
+	docker-compose exec php php artisan db:seed --class=NotesSeeder
+	docker-compose exec php php artisan db:seed --class=ReportsSeeder
+	docker-compose exec php php artisan db:seed --class=WordsSeeder
+	docker-compose exec php php artisan db:seed --class=UserSeeder
+
+re-seed:
+	docker-compose exec php php artisan migrate:refresh
+	docker-compose exec php php artisan db:seed --class=UserSeeder
+	docker-compose exec php php artisan db:seed --class=NotesSeeder
+	docker-compose exec php php artisan db:seed --class=WordsSeeder
+	docker-compose exec php php artisan db:seed --class=ReportsSeeder
+
 migrate:
 	docker-compose exec php php artisan migrate
 
