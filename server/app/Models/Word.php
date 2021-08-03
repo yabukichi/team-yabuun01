@@ -8,4 +8,17 @@ use Illuminate\Database\Eloquent\Model;
 class Word extends Model
 {
     use HasFactory;
+    protected $fillable = [
+        'note_id',
+        'question',
+        'answer',
+    ];
+
+    // 初期値がidカラムを参照しているので$primaryKeyを指定してあげて参照場所を別のカラムにしてあげる
+    protected $primaryKey = "note_id";
+    //hasmanyの子テーブルになるのでbelongsToの設定をする
+    public function note()
+    {
+        return $this->belongsTo('App\Models\Note');
+    }
 }
