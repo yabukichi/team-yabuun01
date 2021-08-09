@@ -1,0 +1,13 @@
+{
+    "version": 3,
+    "mappings": "AE6BA,UAAU,CAAV,MAAU;EACN,EAAE;IACE,SAAS,EAAE,SAAS;;EAGxB,IAAI;IACA,SAAS,EAAE,cAAc",
+    "sources": [
+        "style.scss",
+        "_variables.scss",
+        "_mixin.scss",
+        "_main.scss",
+        "_sidebar.scss"
+    ],
+    "names": [],
+    "file": "style.css"
+}

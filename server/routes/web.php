@@ -36,8 +36,11 @@ Route::get('/Vocabularys/create', [App\Http\Controllers\VocabularyController::cl
 // 追加処理
 Route::post('/Vocabularys/create',[App\Http\Controllers\VocabularyController::class,'add'])->name('Vocabularys.add');
 
+// 単語一覧画面遷移処理
+// Route::post('/Vocabularys/create',[App\Http\Controllers\VocabularyController::class,'detail'])->name('Vocabularys.detail');
+
 // 単語一覧
-Route::get('/Vocabularys/show', [App\Http\Controllers\VocabularyController::class,'show'])->name('Vocabularys.show');
+Route::get('/Vocabularys/show/{id}', [App\Http\Controllers\VocabularyController::class,'show'])->name('Vocabularys.show');
 
 // practice
 Route::get('/practices/index', [App\Http\Controllers\PracticeController::class, 'index'])->name('practices.index');
