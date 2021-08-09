@@ -1,2 +1,20 @@
 {
+  "workbench.iconTheme": "material-icon-theme",
+  "[php]": {
+    "editor.defaultFormatter": "junstyle.php-cs-fixer"
+  },
+  "php-cs-fixer.executablePath": "${extensionPath}/php-cs-fixer.phar",
+  "php-cs-fixer.lastDownload": 1626411609127,
+  "liveSassCompile.settings.autoprefix": ["> 1%", "last 2 versions"],
+  "liveSassCompile.settings.formats": [
+    {
+      "format": "compressed",
+      "extensionName": ".min.css",
+      "savePath": null
+    }
+  ],
+  "editor.formatOnType": true,
+  "explorer.confirmDragAndDrop": false,
+  "workbench.tree.indent": 16,
+  "workbench.tree.renderIndentGuides": "always"
 }
