@@ -1,7 +1,6 @@
-<head>
-	<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-	<script src="jquery.min.js" type="text/javascript"></script>
-</head>
+@extends('layouts.app')
+
+@section('content')
 <form action="{{route('Vocabularys.add')}}" method="POST">
 	@csrf
 	<div>
@@ -31,9 +30,9 @@
 		});
 
 		$(".add-btn").on("click", function(){
-			$("<li><p>Q.<input type='text' name='question[]'></p><p>A.<input type='text' name='answer[]'></p><p class='delete-btn'>削除</p></li>").appendTo("ul");
+			$("<li><p>Q.<input type='text' name='question[]'></p><p>A.<input type='text' name='answer[]'></p><p class='delete-btn'>削除</p></li>").appendTo("#list-item");
 		});
 	});
 </script>
 <div>
-{{-- @endsection --}}
+@endsection
