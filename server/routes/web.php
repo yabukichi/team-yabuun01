@@ -46,3 +46,9 @@ Route::get('/Vocabularys/show/{id}', [App\Http\Controllers\VocabularyController:
 Route::get('/practices/index', [App\Http\Controllers\PracticeController::class, 'index'])->name('practices.index');
 Route::get('/practices/show', [App\Http\Controllers\PracticeController::class, 'show'])->name('practices.show');
 Route::get('/practices/result', [App\Http\Controllers\PracticeController::class, 'result'])->name('practices.result');
+
+//編集画面
+Route::get('/Vocabularys/edit/{id}', [App\Http\Controllers\VocabularyController::class, 'edit'])->name('Vocabularys.edit');
+
+// 更新画面
+Route::post('/Vocabularys/update/{id}',[App\Http\Controllers\VocabularyController::class, 'update'])->name('Vocabularys.update');
