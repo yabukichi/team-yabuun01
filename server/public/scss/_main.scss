@@ -13,3 +13,28 @@
 //     content: "";
 //     padding: 18.7px 0 0;
 // }
+
+body {
+    max-width: 576px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.top_wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    .genre_button {
+        text-align: center;
+        width: 100px;
+        min-width: 100px;
+        background: #bb86fc;
+        color: white;
+        font-weight: 700;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        font-size: 20px;
+        margin: 20px;
+    }
+}
