@@ -52,3 +52,6 @@ Route::get('/Vocabularys/edit/{id}', [App\Http\Controllers\VocabularyController:
 
 // 更新画面
 Route::post('/Vocabularys/update/{id}',[App\Http\Controllers\VocabularyController::class, 'update'])->name('Vocabularys.update');
+
+Route::get('/practices/result', [App\Http\Controllers\PracticeController::class, 'result'])->name('practices.result');
+
