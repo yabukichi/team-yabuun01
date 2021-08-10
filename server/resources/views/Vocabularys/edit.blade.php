@@ -6,9 +6,11 @@
 		<input type="text" name='title' value="{{$notes->title}}">
 	</div>
 	<div>
-		<p>Q.<input type="text" name='question' value="{{$words->question}}"></p>
-		<p>A.<input type="text" name='answer' value="{{$words->answer}}"></p>
-
+		@foreach($words as $word)
+		<p>ID : {{ $word->id }}</p>
+		<p>Q.<input type="text" name='question{{$word->id}}' value="{{$word->question}}"></p>
+		<p>A.<input type="text" name='answer{{$word->id}}' value="{{$word->answer}}"></p>
+		@endforeach
 	</div>
 	<div>
 		<p class="create-btn">
