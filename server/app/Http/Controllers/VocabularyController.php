@@ -20,17 +20,19 @@ class VocabularyController extends Controller
         return view('vocabularys.index', compact('notes'));
     }
 
-    public function create(Request $request){
+    public function create(Request $request)
+    {
         return view('vocabularys.create');
     }
 
-    public function add(Request $request){
+    public function add(Request $request)
+    {
         $userId = Auth::id();
-            
+
         $note = Note::create([
             'title'=>$request->title,
             'user_id'=>$userId
-        ]);        
+        ]);
 
         // create.bladeから配列で受け取った値を変数に代入
         $questionItems = $request->question;
@@ -65,8 +67,6 @@ class VocabularyController extends Controller
         //     }
         // }
 
-
-
         
         // DB::table('notes')->insert($notesParam);
         // DB::table('words')->insert($wordsParam);
@@ -81,14 +81,71 @@ class VocabularyController extends Controller
 
     // }
 
-    public function show(Request $request, $id){
-        // $noteId = Note::find($id); 
+    public function show(Request $request, $id)
+    {
+        // $noteId = Note::find($id);
         // dd($noteId);
         $wordId = Note::find($request->id);
         // dd($wordId);
-        $wordData = $wordId->word;	
+        $wordData = $wordId->word;
         // dd($wordData);
         // DBから単語帳の中身を取り出してviewに送る
         return view('Vocabularys.show', compact('wordData'));
     }
+
+    public function edit(Request $request, $id)
+    {
+        // リンクから送られてたIDをもとにテーブルからIDを取得する
+        $notes = Note::find($id);
+        $words = Word::where('note_id', $notes->id)->get();
+        Log::debug($words);
+        // dd($notes);
+        return view('Vocabularys.edit', compact('notes', 'words'));
+    }
+
+    public function update(Request $request, $id){
+        Log::debug('request');
+        Log::debug($request);
+        $notes = Note::find($id);
+        foreach($request->all() as $key => $val){
+            if(str_contains($key , 'question')){
+                $word_id = explode("question", $key);
+                Log::debug('word_id[1]');
+                Log::debug($word_id[1]);
+                $word = Word::where('id',$word_id[1])->first();
+                
+                $question = 'question'.$word_id[1];
+                $answer = 'answer'.$word_id[1];
+
+                Log::debug('question');
+                Log::debug($question);
+                Log::debug('request->$question');
+                Log::debug($request->$question);
+                Log::debug('words->question');
+                // Log::debug($words->question);
+                Log::debug('request->$answer');
+                Log::debug($request->$answer);
+                Log::debug('words->answer');
+                // Log::debug($words->answer);
+                $word->question = $request->$question;
+                $word->answer = $request->$answer;
+                Log::debug(Word::where('note_id',$notes->id)->get());
+                Log::debug(Word::where('id',$notes->id)->get());
+                $word->save();
+                Log::debug('words');
+                Log::debug($word);
+                Log::debug(Word::where('note_id',$notes->id)->get());
+                Log::debug(Word::where('id',$notes->id)->get());
+            }
+        }
+
+		// editフォームから送られてきたIDを取得する
+		
+        Log::debug(Word::where('note_id',$notes->id)->get());
+		$notes->title=$request->input('title');
+		// データを保存
+		$notes->save();
+
+		return redirect('/Vocabularys/index');
+	}
 }

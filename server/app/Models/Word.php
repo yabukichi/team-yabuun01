@@ -15,7 +15,7 @@ class Word extends Model
     ];
 
     // 初期値がidカラムを参照しているので$primaryKeyを指定してあげて参照場所を別のカラムにしてあげる
-    protected $primaryKey = "note_id";
+    protected $primaryKey = "id";
     //hasmanyの子テーブルになるのでbelongsToの設定をする
     public function note()
     {
